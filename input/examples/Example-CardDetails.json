@@ -1,10 +1,12 @@
 {
     "resourceType": "Parameters",
+    "id": "example-carddetails-parameters",
     "parameter": [
         {
             "name": "source",
             "resource": {
                 "resourceType": "CardDetails",
+                "id": "example-carddetails",
                 "CardNo": "123456",
                 "FirstName": "Asha",
                 "LastName": "Mnyika",
