@@ -1,0 +1,62 @@
+{
+    "resourceType": "StructureDefinition",
+    "id": "CardDetails",
+    "url": "https://build.fhir.org/ig/Speedykom/tz-fhir-ig/StructureDefinition/CardDetails",
+    "name": "CardDetails",
+    "status": "draft",
+    "kind": "logical",
+    "abstract": false,
+    "type": "CardDetails",
+    "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Element",
+    "derivation": "specialization",
+    "description": "Legacy NHIF/ZHSF CardDetails payload.",
+    "differential": {
+        "element": [
+            {
+                "id": "CardDetails.CardNo",
+                "path": "CardDetails.CardNo",
+                "type": [
+                    {
+                        "code": "string"
+                    }
+                ]
+            },
+            {
+                "id": "CardDetails.FirstName",
+                "path": "CardDetails.FirstName",
+                "type": [
+                    {
+                        "code": "string"
+                    }
+                ]
+            },
+            {
+                "id": "CardDetails.LastName",
+                "path": "CardDetails.LastName",
+                "type": [
+                    {
+                        "code": "string"
+                    }
+                ]
+            },
+            {
+                "id": "CardDetails.Gender",
+                "path": "CardDetails.Gender",
+                "type": [
+                    {
+                        "code": "string"
+                    }
+                ]
+            },
+            {
+                "id": "CardDetails.DateOfBirth",
+                "path": "CardDetails.DateOfBirth",
+                "type": [
+                    {
+                        "code": "date"
+                    }
+                ]
+            }
+        ]
+    }
+}

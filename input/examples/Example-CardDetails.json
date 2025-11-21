@@ -1,0 +1,16 @@
+{
+    "resourceType": "Parameters",
+    "parameter": [
+        {
+            "name": "source",
+            "resource": {
+                "resourceType": "CardDetails",
+                "CardNo": "123456",
+                "FirstName": "Asha",
+                "LastName": "Mnyika",
+                "Gender": "F",
+                "DateOfBirth": "1988-06-20"
+            }
+        }
+    ]
+}
