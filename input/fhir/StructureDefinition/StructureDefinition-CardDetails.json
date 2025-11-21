@@ -13,6 +13,10 @@
     "differential": {
         "element": [
             {
+                "id": "CardDetails",
+                "path": "CardDetails"
+            },
+            {
                 "id": "CardDetails.CardNo",
                 "path": "CardDetails.CardNo",
                 "type": [
