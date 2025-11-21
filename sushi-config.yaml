@@ -11,11 +11,13 @@ description: |
   StructureMaps, ConceptMaps, terminology assets, examples, and national profiles.
   This IG supports national interoperability and legacy system transformation.
 
-version: 0.1.0
+# REQUIRED BY SUSHI
 status: active
-license: CC0-1.0
+version: 0.1.0
 fhirVersion: 5.0.0
+copyrightYear: 2025+
 releaseLabel: ci-build
+license: CC0-1.0
 
 publisher:
   name: Ministry of Health – Tanzania
