@@ -1,17 +1,13 @@
-id: tz.ig
-packageId: tz.ig
-canonical: https://build.fhir.org/ig/Speedykom/tz-fhir-ig
-url: https://build.fhir.org/ig/Speedykom/tz-fhir-ig/ImplementationGuide/tz.ig
-
+id: tz-fhir-ig
+packageId: tz.fhir.ig
+canonical: https://speedykom.org/tz-fhir-ig
+url: https://speedykom.org/tz-fhir-ig/ImplementationGuide/tz-fhir-ig
 name: TanzaniaNationalFHIRIG
-title: "Tanzania National FHIR Implementation Guide"
-
-description: |
+title: "Tanzania FHIR Facade Implementation Guide"
+description: >
   The official FHIR R5 Implementation Guide for Tanzania, including Logical Models,
   StructureMaps, ConceptMaps, terminology assets, examples, and national profiles.
   This IG supports national interoperability and legacy system transformation.
-
-# REQUIRED BY SUSHI
 status: active
 version: 0.1.0
 fhirVersion: 5.0.0
@@ -20,23 +16,27 @@ releaseLabel: ci-build
 license: CC0-1.0
 
 publisher:
-  name: Ministry of Health – Tanzania
-  url: https://moh.go.tz
+  name: Speedykom
+  url: https://speedykom.org
+  email: info@speedykom.org
 
 contact:
   - name: Tanzania Digital Health Team
     telecom:
       - system: email
-        value: hie@moh.go.tz
+        value: contact@speedykom.org
         use: work
 
-jurisdiction: urn:iso:std:iso:3166#TZ "Tanzania"
+jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#834 "Tanzania"
 
 dependencies:
   hl7.fhir.r5.core: 5.0.0
+  hl7.terminology.r5: 7.0.0
 
 parameters:
-  excludettl: true
-  validation: [ no-broken-links ]
+  path-resource:
+    - input/maps
+  path-binary:
+    - input/cql
 
 FSHOnly: false
