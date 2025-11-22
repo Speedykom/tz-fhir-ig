@@ -1,7 +1,7 @@
-id: tz-fhir-ig
+id: ttz.fhir.ig
 packageId: tz.fhir.ig
-canonical: https://speedykom.org/tz-fhir-ig
-url: https://speedykom.org/tz-fhir-ig/ImplementationGuide/tz-fhir-ig
+canonical: https://speedykom.org/tz.fhir.ig
+url: https://speedykom.org/tz-fhir-ig/ImplementationGuide/tz.fhir.ig
 name: TanzaniaNationalFHIRIG
 title: "Tanzania FHIR Facade Implementation Guide"
 description: >
@@ -16,9 +16,9 @@ releaseLabel: ci-build
 license: CC0-1.0
 
 publisher:
-  name: Speedykom
-  url: https://speedykom.org
-  email: info@speedykom.org
+  name: Ministry of Health – Tanzania
+  url: https://moh.go.tz
+  email: info@moh.go.tz
 
 contact:
   - name: Tanzania Digital Health Team
@@ -32,6 +32,7 @@ jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#834 "Tanzania"
 dependencies:
   hl7.fhir.r5.core: 5.0.0
   hl7.terminology.r5: 7.0.0
+  hl7.fhir.uv.extensions.r5: current
 
 parameters:
   path-resource:
