@@ -1,7 +1,7 @@
-id: tz.fhir.ig
+id: tz-fhir-ig
 packageId: tz.fhir.ig
 canonical: https://speedykom.org/tz-fhir-ig
-url: http://speedykom.org/tz-fhir-ig/ImplementationGuide/tz.fhir.ig
+url: http://speedykom.org/tz-fhir-ig/ImplementationGuide/tz-fhir-ig
 name: TanzaniaNationalFHIRIG
 title: "Tanzania FHIR Facade Implementation Guide"
 description: >
