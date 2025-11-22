@@ -1,12 +1,25 @@
-map "http://moh.tz/fhir/StructureMap/CardDetailsToPatient" = CardDetailsToPatient
+map "http://speedykom.org/tz-fhir-ig/StructureMap/CardDetailsToPatient" = CardDetailsToPatient
 
-uses "CardDetails" as source
-uses "Patient" as target
+// Logical model (source)
+uses "http://speedykom.org/tz-fhir-ig/StructureDefinition/CardDetails" alias CardDetails as source
+
+// Target FHIR resource
+uses "http://hl7.org/fhir/StructureDefinition/Patient" alias Patient as target
 
 group CardDetailsToPatient(source src : CardDetails, target tgt : Patient) {
-  src.CardNo        -> tgt.identifier as id, id.value = src.CardNo;
-  src.FirstName     -> tgt.name.given = src.FirstName;
-  src.LastName      -> tgt.name.family = src.LastName;
-  src.DateOfBirth   -> tgt.birthDate = src.DateOfBirth;
-  src.Gender        -> tgt.gender = translate(src.Gender, 'GenderCodes-TZ', 'code');
+  
+  // Card Number → Patient.identifier
+  src.CardNo -> tgt.identifier as id, id.system = "http://moh.tz/identifier/cardno", id.value = src.CardNo;
+  
+  // Name fields
+  src.FirstName -> tgt.name.given = src.FirstName;
+  src.LastName  -> tgt.name.family = src.LastName;
+  
+  // Birthdate
+  src.DateOfBirth -> tgt.birthDate = src.DateOfBirth;
+
+  // Gender translation via ConceptMap
+  src.Gender -> tgt.gender = translate(src.Gender,
+    'http://speedykom.org/tz-fhir-ig/ConceptMap/GenderCodes-TZ',
+    'code');
 }

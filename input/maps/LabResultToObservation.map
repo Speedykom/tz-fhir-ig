@@ -1,11 +1,24 @@
-map "http://moh.tz/fhir/StructureMap/LabResultToObservation" = LabResultToObservation
+map "http://speedykom.org/tz-fhir-ig/StructureMap/LabResultToObservation" = LabResultToObservation
 
-uses "LabResult" as source
-uses "Observation" as target
+// Logical model (source)
+uses "http://speedykom.org/tz-fhir-ig/StructureDefinition/LabResult" alias LabResult as source
 
-group LabResultToObservation(src : LabResult, tgt : Observation) {
-  src.TestCode        -> tgt.code.coding as c, c.code = src.TestCode;
-  src.ResultValue     -> tgt.valueString = src.ResultValue;
-  src.Unit            -> tgt.valueQuantity.unit = src.Unit;
-  src.CollectionDate  -> tgt.effectiveDateTime = src.CollectionDate;
+// Target FHIR resource
+uses "http://hl7.org/fhir/StructureDefinition/Observation" alias Observation as target
+
+group LabResultToObservation(source src : LabResult, target tgt : Observation) {
+
+  // Test code → Observation.code
+  src.TestCode -> tgt.code.coding as c, 
+    c.system = "http://moh.tz/lab/test-code", 
+    c.code = src.TestCode;
+
+  // Result value
+  src.ResultValue -> tgt.valueString = src.ResultValue;
+
+  // Units (optional: could also be a Quantity if numeric)
+  src.Unit -> tgt.valueQuantity.unit = src.Unit;
+
+  // Collection date
+  src.CollectionDate -> tgt.effectiveDateTime = src.CollectionDate;
 }
