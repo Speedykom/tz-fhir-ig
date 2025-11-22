@@ -35,8 +35,6 @@ dependencies:
 
 parameters:
   path-resource:
-    - input/maps
-  path-binary:
-    - input/cql
+    - input/fhir
 
 FSHOnly: false
