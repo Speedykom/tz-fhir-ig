@@ -1,0 +1,53 @@
+{
+    "resourceType": "StructureDefinition",
+    "id": "LabResult",
+    "url": "https://build.fhir.org/ig/Speedykom/tz-fhir-ig/StructureDefinition/LabResult",
+    "name": "LabResult",
+    "status": "draft",
+    "kind": "logical",
+    "abstract": false,
+    "type": "LabResult",
+    "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Element",
+    "derivation": "specialization",
+    "description": "Legacy LIS Lab Result payload.",
+    "differential": {
+        "element": [
+            {
+                "id": "LabResult.TestCode",
+                "path": "LabResult.TestCode",
+                "type": [
+                    {
+                        "code": "string"
+                    }
+                ]
+            },
+            {
+                "id": "LabResult.ResultValue",
+                "path": "LabResult.ResultValue",
+                "type": [
+                    {
+                        "code": "string"
+                    }
+                ]
+            },
+            {
+                "id": "LabResult.Unit",
+                "path": "LabResult.Unit",
+                "type": [
+                    {
+                        "code": "string"
+                    }
+                ]
+            },
+            {
+                "id": "LabResult.CollectionDate",
+                "path": "LabResult.CollectionDate",
+                "type": [
+                    {
+                        "code": "dateTime"
+                    }
+                ]
+            }
+        ]
+    }
+}

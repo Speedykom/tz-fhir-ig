@@ -1,0 +1,11 @@
+map "http://moh.tz/fhir/StructureMap/LabResultToObservation" = LabResultToObservation
+
+uses "LabResult" as source
+uses "Observation" as target
+
+group LabResultToObservation(src : LabResult, tgt : Observation) {
+  src.TestCode        -> tgt.code.coding as c, c.code = src.TestCode;
+  src.ResultValue     -> tgt.valueString = src.ResultValue;
+  src.Unit            -> tgt.valueQuantity.unit = src.Unit;
+  src.CollectionDate  -> tgt.effectiveDateTime = src.CollectionDate;
+}

@@ -1,0 +1,17 @@
+{
+    "resourceType": "CodeSystem",
+    "id": "TZGender",
+    "url": "https://moh.tz/fhir/CodeSystem/TZGender",
+    "status": "active",
+    "content": "complete",
+    "concept": [
+        {
+            "code": "M",
+            "display": "Male"
+        },
+        {
+            "code": "F",
+            "display": "Female"
+        }
+    ]
+}

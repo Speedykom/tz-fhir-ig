@@ -1,0 +1,12 @@
+map "http://moh.tz/fhir/StructureMap/CardDetailsToPatient" = CardDetailsToPatient
+
+uses "CardDetails" as source
+uses "Patient" as target
+
+group CardDetailsToPatient(source src : CardDetails, target tgt : Patient) {
+  src.CardNo        -> tgt.identifier as id, id.value = src.CardNo;
+  src.FirstName     -> tgt.name.given = src.FirstName;
+  src.LastName      -> tgt.name.family = src.LastName;
+  src.DateOfBirth   -> tgt.birthDate = src.DateOfBirth;
+  src.Gender        -> tgt.gender = translate(src.Gender, 'GenderCodes-TZ', 'code');
+}
