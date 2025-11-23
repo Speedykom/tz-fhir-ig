@@ -1,0 +1,54 @@
+{
+    "resourceType": "ConceptMap",
+    "id": "GenderCodes-TZ",
+    "url": "http://moh.tz/fhir/ConceptMap/GenderCodes-TZ",
+    "version": "0.1.0",
+    "name": "TZGenderConceptMap",
+    "title": "Mapping Legacy TZ Gender Codes to FHIR Administrative Gender",
+    "status": "active",
+    "experimental": false,
+    "date": "2025-11-22",
+    "publisher": "Ministry of Health Tanzania",
+    "description": "Maps legacy Tanzanian gender codes (M, F, U) to FHIR administrative gender codes (male, female, unknown).",
+    "group": [
+        {
+            "source": "http://moh.tz/fhir/CodeSystem/TZGender",
+            "target": "http://hl7.org/fhir/administrative-gender",
+            "element": [
+                {
+                    "code": "M",
+                    "display": "Male",
+                    "target": [
+                        {
+                            "code": "male",
+                            "display": "Male",
+                            "equivalence": "equivalent"
+                        }
+                    ]
+                },
+                {
+                    "code": "F",
+                    "display": "Female",
+                    "target": [
+                        {
+                            "code": "female",
+                            "display": "Female",
+                            "equivalence": "equivalent"
+                        }
+                    ]
+                },
+                {
+                    "code": "U",
+                    "display": "Unknown",
+                    "target": [
+                        {
+                            "code": "unknown",
+                            "display": "Unknown",
+                            "equivalence": "equivalent"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

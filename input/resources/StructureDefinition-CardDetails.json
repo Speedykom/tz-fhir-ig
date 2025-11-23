@@ -1,24 +1,61 @@
 {
     "resourceType": "StructureDefinition",
     "id": "CardDetails",
-    "url": "https://build.fhir.org/ig/Speedykom/tz-fhir-ig/StructureDefinition/CardDetails",
+    "url": "http://moh.tz/fhir/StructureDefinition/CardDetails",
+    "version": "0.1.0",
     "name": "CardDetails",
-    "status": "draft",
+    "title": "CardDetails Logical Model",
+    "status": "active",
+    "experimental": true,
+    "date": "2025-11-22T00:00:00+00:00",
+    "publisher": "Ministry of Health Tanzania",
+    "description": "Logical model for a legacy CardDetails payload used as source for mapping to FHIR Patient.",
+    "jurisdiction": [
+        {
+            "coding": [
+                {
+                    "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+                    "code": "834",
+                    "display": "United Republic of Tanzania"
+                }
+            ]
+        }
+    ],
+    "fhirVersion": "5.0.0",
     "kind": "logical",
     "abstract": false,
-    "type": "CardDetails",
-    "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Element",
+    "type": "http://moh.tz/fhir/StructureDefinition/CardDetails",
+    "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Base",
     "derivation": "specialization",
-    "description": "Legacy NHIF/ZHSF CardDetails payload.",
     "differential": {
         "element": [
             {
                 "id": "CardDetails",
-                "path": "CardDetails"
+                "path": "CardDetails",
+                "definition": "Legacy CardDetails message describing patient registration data.",
+                "min": 0,
+                "max": "*"
             },
             {
                 "id": "CardDetails.CardNo",
                 "path": "CardDetails.CardNo",
+                "short": "Legacy card number",
+                "definition": "Card number identifying the patient in the legacy system.",
+                "min": 1,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "string"
+                    }
+                ]
+            },
+            {
+                "id": "CardDetails.MembershipNo",
+                "path": "CardDetails.MembershipNo",
+                "short": "Membership number",
+                "definition": "Membership identifier (e.g. insurance scheme or national program).",
+                "min": 0,
+                "max": "1",
                 "type": [
                     {
                         "code": "string"
@@ -28,6 +65,23 @@
             {
                 "id": "CardDetails.FirstName",
                 "path": "CardDetails.FirstName",
+                "short": "First name",
+                "definition": "Patient first name.",
+                "min": 1,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "string"
+                    }
+                ]
+            },
+            {
+                "id": "CardDetails.MiddleName",
+                "path": "CardDetails.MiddleName",
+                "short": "Middle name",
+                "definition": "Patient middle name.",
+                "min": 0,
+                "max": "1",
                 "type": [
                     {
                         "code": "string"
@@ -37,15 +91,10 @@
             {
                 "id": "CardDetails.LastName",
                 "path": "CardDetails.LastName",
-                "type": [
-                    {
-                        "code": "string"
-                    }
-                ]
-            },
-            {
-                "id": "CardDetails.Gender",
-                "path": "CardDetails.Gender",
+                "short": "Last name",
+                "definition": "Patient last name.",
+                "min": 1,
+                "max": "1",
                 "type": [
                     {
                         "code": "string"
@@ -55,9 +104,26 @@
             {
                 "id": "CardDetails.DateOfBirth",
                 "path": "CardDetails.DateOfBirth",
+                "short": "Date of birth",
+                "definition": "Patient date of birth (YYYY-MM-DD).",
+                "min": 1,
+                "max": "1",
                 "type": [
                     {
                         "code": "date"
+                    }
+                ]
+            },
+            {
+                "id": "CardDetails.Gender",
+                "path": "CardDetails.Gender",
+                "short": "Legacy gender code",
+                "definition": "Legacy gender value (e.g. 'M', 'F', 'U') mapped via ConceptMap to FHIR AdministrativeGender.",
+                "min": 1,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "string"
                     }
                 ]
             }

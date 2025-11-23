@@ -6,7 +6,12 @@
     "name": "TZGender",
     "title": "TZ Legacy Gender Codes",
     "status": "active",
+    "experimental": false,
+    "date": "2025-11-22",
+    "publisher": "Ministry of Health Tanzania",
+    "description": "Legacy gender codes used in Tanzania systems (M, F, U).",
     "content": "complete",
+    "caseSensitive": true,
     "concept": [
         {
             "code": "M",
