@@ -11,6 +11,7 @@ This IG provides:
 * **Examples** for testing and validation
 * A ready-to-use **package.tgz** consumed by **Matchbox** and the Facade mediators
 
+
 This IG is automatically published through the HL7 **FHIR CI Build Server**, allowing the Facade’s Matchbox service to load it dynamically.
 
 ---
