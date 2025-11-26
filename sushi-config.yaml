@@ -4,6 +4,7 @@ canonical: http://moh.tz/fhir
 url: http://moh.tz/fhir/ImplementationGuide/tz-fhir-ig
 name: TanzaniaNationalFHIRIG
 title: "Tanzania FHIR Facade Implementation Guide"
+
 description: >
   The national FHIR R5 Implementation Guide for Tanzania,
   including Logical Models, StructureMaps, ConceptMaps,
@@ -12,8 +13,13 @@ description: >
 status: active
 version: 0.1.0
 fhirVersion: 5.0.0
+
+# REQUIRED BY SUSHI
+copyrightYear: 2025+
+releaseLabel: ci-build
+
 license: CC0-1.0
-copyright:
+
 publisher:
   name: Ministry of Health – Tanzania
   url: https://moh.go.tz
