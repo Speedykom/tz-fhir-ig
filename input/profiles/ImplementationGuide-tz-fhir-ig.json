@@ -1,0 +1,150 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "tz-fhir-ig",
+  "url": "http://speedykom.org/tz-fhir-ig/ImplementationGuide/tz-fhir-ig",
+  "version": "0.1.0",
+  "name": "TanzaniaNationalFHIRIG",
+  "title": "Tanzania FHIR Facade Implementation Guide",
+  "status": "active",
+  "publisher": "Ministry of Health – Tanzania",
+  "contact": [
+    {
+      "name": "Ministry of Health – Tanzania",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://moh.go.tz"
+        },
+        {
+          "system": "email",
+          "value": "info@moh.go.tz"
+        }
+      ]
+    },
+    {
+      "name": "Tanzania Digital Health Team",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "contact@speedykom.org",
+          "use": "work"
+        }
+      ]
+    }
+  ],
+  "description": "The official FHIR R5 Implementation Guide for Tanzania, including Logical Models, StructureMaps, ConceptMaps, terminology assets, examples, and national profiles. This IG supports national interoperability and legacy system transformation.\n",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "834",
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "display": "Tanzania"
+        }
+      ]
+    }
+  ],
+  "packageId": "tz.fhir.ig",
+  "license": "CC0-1.0",
+  "fhirVersion": [
+    "5.0.0"
+  ],
+  "dependsOn": [
+    {
+      "packageId": "hl7.fhir.r5.core",
+      "version": "5.0.0",
+      "uri": "http://hl7.org/fhir/ImplementationGuide/fhir",
+      "id": "hl7_fhir_r5_core"
+    },
+    {
+      "packageId": "hl7.terminology.r5",
+      "version": "7.0.0",
+      "uri": "http://terminology.hl7.org",
+      "id": "hl7_terminology_r5"
+    }
+  ],
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "StructureDefinition/CardDetails"
+        },
+        "description": "Legacy NHIF/ZHSF CardDetails payload.",
+        "name": "CardDetails",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Parameters/example-carddetails-parameters"
+        },
+        "name": "example-carddetails-parameters",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "ConceptMap/GenderCodes-TZ"
+        },
+        "name": "GenderCodes-TZ",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/LabResult"
+        },
+        "description": "Legacy LIS Lab Result payload.",
+        "name": "LabResult",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/TZGender"
+        },
+        "name": "TZGender",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/TZGenderVS"
+        },
+        "name": "TZGenderVS",
+        "isExample": false
+      }
+    ],
+    "page": {
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "title": "Home",
+          "generation": "markdown",
+          "name": "index.html",
+          "sourceUrl": "index.html"
+        },
+        {
+          "title": "Changes",
+          "generation": "html",
+          "name": "changes.html",
+          "sourceUrl": "changes.html"
+        }
+      ],
+      "name": "toc.html",
+      "sourceUrl": "toc.html"
+    },
+    "parameter": [
+      {
+        "code": {
+          "code": "copyrightyear",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "2025+"
+      },
+      {
+        "code": {
+          "code": "releaselabel",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "ci-build"
+      }
+    ]
+  }
+}
