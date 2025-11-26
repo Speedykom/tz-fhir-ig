@@ -1,0 +1,44 @@
+{
+    "resourceType": "ImplementationGuide",
+    "id": "tz-fhir-ig",
+    "url": "http://moh.tz/fhir/ImplementationGuide/tz-fhir-ig",
+    "version": "0.1.0",
+    "name": "TanzaniaFHIRFacadeIG",
+    "title": "Tanzania FHIR Façade Implementation Guide",
+    "status": "active",
+    "date": "2025-11-22",
+    "publisher": "Ministry of Health Tanzania",
+    "packageId": "tz.fhir.facade",
+    "fhirVersion": [
+        "5.0.0"
+    ],
+    "definition": {
+        "resource": [
+            {
+                "reference": {
+                    "reference": "StructureDefinition/CardDetails"
+                }
+            },
+            {
+                "reference": {
+                    "reference": "StructureMap/CardDetailsToPatient"
+                }
+            },
+            {
+                "reference": {
+                    "reference": "CodeSystem/TZGender"
+                }
+            },
+            {
+                "reference": {
+                    "reference": "ValueSet/TZGender"
+                }
+            },
+            {
+                "reference": {
+                    "reference": "ConceptMap/GenderCodes-TZ"
+                }
+            }
+        ]
+    }
+}

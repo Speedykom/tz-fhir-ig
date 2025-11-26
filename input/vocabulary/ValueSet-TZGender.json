@@ -1,15 +1,15 @@
 {
     "resourceType": "ValueSet",
-    "id": "TZGenderVS",
-    "url": "http://moh.tz/fhir/ValueSet/TZGenderVS",
+    "id": "TZGender",
+    "url": "http://moh.tz/fhir/ValueSet/TZGender",
     "version": "0.1.0",
-    "name": "TZGenderValueSet",
-    "title": "TZ Gender ValueSet",
+    "name": "TZGenderVS",
+    "title": "TZ Legacy Gender ValueSet",
     "status": "active",
     "experimental": false,
     "date": "2025-11-22",
     "publisher": "Ministry of Health Tanzania",
-    "description": "ValueSet binding the legacy TZ Gender CodeSystem.",
+    "description": "ValueSet representing legacy gender codes used in Tanzania.",
     "compose": {
         "include": [
             {

@@ -6,6 +6,7 @@
     "name": "CardDetailsToPatient",
     "title": "Map CardDetails Logical Model to Patient",
     "status": "active",
+    "date": "2025-11-22",
     "publisher": "Ministry of Health Tanzania",
     "jurisdiction": [
         {
@@ -31,7 +32,7 @@
     "group": [
         {
             "name": "CardDetailsToPatient",
-            "typeMode": "types",
+            "typeMode": "type-and-types",
             "input": [
                 {
                     "name": "src",
@@ -50,6 +51,7 @@
                     "source": [
                         {
                             "context": "src",
+                            "contextType": "variable",
                             "element": "CardNo",
                             "variable": "cardno"
                         }
@@ -109,6 +111,7 @@
                             "source": [
                                 {
                                     "context": "src",
+                                    "contextType": "variable",
                                     "element": "FirstName",
                                     "variable": "first"
                                 }
@@ -132,6 +135,7 @@
                             "source": [
                                 {
                                     "context": "src",
+                                    "contextType": "variable",
                                     "element": "LastName",
                                     "variable": "family"
                                 }
@@ -157,6 +161,7 @@
                     "source": [
                         {
                             "context": "src",
+                            "contextType": "variable",
                             "element": "DateOfBirth",
                             "variable": "dob"
                         }
@@ -180,6 +185,7 @@
                     "source": [
                         {
                             "context": "src",
+                            "contextType": "variable",
                             "element": "Gender",
                             "variable": "gender"
                         }
