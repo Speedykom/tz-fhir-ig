@@ -20,7 +20,7 @@
     "group": [
         {
             "name": "main",
-            "typeMode": "none",
+            "typeMode": "type-and-types",
             "input": [
                 {
                     "name": "src",
