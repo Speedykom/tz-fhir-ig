@@ -1,0 +1,73 @@
+{
+    "resourceType": "StructureDefinition",
+    "id": "tz-claimresponse",
+    "url": "http://moh.tz/fhir/StructureDefinition/tz-claimresponse",
+    "name": "TzClaimResponse",
+    "title": "Tanzania ClaimResponse Profile",
+    "status": "active",
+    "version": "0.1.0",
+    "date": "2025-01-01",
+    "publisher": "Ministry of Health – Tanzania",
+    "description": "Minimal ClaimResponse profile for ZHSF authorization, eligibility, and claim submission responses.",
+    "fhirVersion": "5.0.0",
+    "kind": "resource",
+    "abstract": false,
+    "type": "ClaimResponse",
+    "baseDefinition": "http://hl7.org/fhir/StructureDefinition/ClaimResponse",
+    "derivation": "constraint",
+    "differential": {
+        "element": [
+            {
+                "id": "ClaimResponse",
+                "path": "ClaimResponse"
+            },
+            {
+                "id": "ClaimResponse.preAuthRef",
+                "path": "ClaimResponse.preAuthRef",
+                "min": 0,
+                "max": "1",
+                "mustSupport": true,
+                "short": "authorizationNo from ZHSF."
+            },
+            {
+                "id": "ClaimResponse.item",
+                "path": "ClaimResponse.item",
+                "min": 0,
+                "max": "*",
+                "mustSupport": true
+            },
+            {
+                "id": "ClaimResponse.item.reviewOutcome",
+                "path": "ClaimResponse.item.reviewOutcome",
+                "min": 0,
+                "max": "1",
+                "mustSupport": true,
+                "short": "Authorization / eligibility decision for this item."
+            },
+            {
+                "id": "ClaimResponse.item.reviewOutcome.decision",
+                "path": "ClaimResponse.item.reviewOutcome.decision",
+                "min": 0,
+                "max": "1",
+                "mustSupport": true,
+                "short": "ACCEPTED / REJECTED / eligible / not_eligible as text/code."
+            },
+            {
+                "id": "ClaimResponse.item.reviewOutcome.reason",
+                "path": "ClaimResponse.item.reviewOutcome.reason",
+                "min": 0,
+                "max": "1",
+                "mustSupport": true,
+                "short": "rejectionReasonID or remarks."
+            },
+            {
+                "id": "ClaimResponse.payment",
+                "path": "ClaimResponse.payment",
+                "min": 0,
+                "max": "1",
+                "mustSupport": true,
+                "short": "Totals from PaymentBatches (AmountAccepted, adjustments etc.)."
+            }
+        ]
+    }
+}

@@ -1,0 +1,106 @@
+{
+    "resourceType": "StructureMap",
+    "id": "ZHSFAuthorizationToClaimResponse",
+    "url": "http://moh.tz/fhir/StructureMap/ZHSFAuthorizationToClaimResponse",
+    "name": "ZHSFAuthorizationToClaimResponse",
+    "status": "active",
+    "version": "0.1.0",
+    "structure": [
+        {
+            "url": "http://moh.tz/fhir/StructureDefinition/zhsf-authorization-payload",
+            "mode": "source",
+            "alias": "src"
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/ClaimResponse",
+            "mode": "target",
+            "alias": "resp"
+        }
+    ],
+    "group": [
+        {
+            "name": "main",
+            "typeMode": "none",
+            "input": [
+                {
+                    "name": "src",
+                    "mode": "source",
+                    "type": "ZHSFAuthorizationPayload"
+                },
+                {
+                    "name": "resp",
+                    "mode": "target",
+                    "type": "ClaimResponse"
+                }
+            ],
+            "rule": [
+                {
+                    "name": "setPreAuthRef",
+                    "source": [
+                        {
+                            "context": "src",
+                            "element": "authorizationNo",
+                            "variable": "aNo"
+                        }
+                    ],
+                    "target": [
+                        {
+                            "context": "resp",
+                            "element": "preAuthRef",
+                            "transform": "copy",
+                            "parameter": [
+                                {
+                                    "valueId": "aNo"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "setDecision",
+                    "source": [
+                        {
+                            "context": "src",
+                            "element": "authorizationStatus",
+                            "variable": "st"
+                        }
+                    ],
+                    "target": [
+                        {
+                            "context": "resp",
+                            "element": "item[0].reviewOutcome.decision.text",
+                            "transform": "copy",
+                            "parameter": [
+                                {
+                                    "valueId": "st"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "setReason",
+                    "source": [
+                        {
+                            "context": "src",
+                            "element": "rejectionReasonID",
+                            "variable": "rr"
+                        }
+                    ],
+                    "target": [
+                        {
+                            "context": "resp",
+                            "element": "item[0].reviewOutcome.reason.text",
+                            "transform": "copy",
+                            "parameter": [
+                                {
+                                    "valueId": "rr"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

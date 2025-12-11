@@ -1,0 +1,150 @@
+{
+    "resourceType": "StructureMap",
+    "id": "ZHSFClaimSubmissionToClaim",
+    "url": "http://moh.tz/fhir/StructureMap/ZHSFClaimSubmissionToClaim",
+    "name": "ZHSFClaimSubmissionToClaim",
+    "status": "active",
+    "version": "0.1.0",
+    "structure": [
+        {
+            "url": "http://moh.tz/fhir/StructureDefinition/zhsf-claim-submission-payload",
+            "mode": "source",
+            "alias": "src"
+        },
+        {
+            "url": "http://moh.tz/fhir/StructureDefinition/tz-claim",
+            "mode": "target",
+            "alias": "clm"
+        }
+    ],
+    "group": [
+        {
+            "name": "main",
+            "typeMode": "none",
+            "input": [
+                {
+                    "name": "src",
+                    "mode": "source",
+                    "type": "ZHSFClaimSubmissionPayload"
+                },
+                {
+                    "name": "clm",
+                    "mode": "target",
+                    "type": "Claim"
+                }
+            ],
+            "rule": [
+                {
+                    "name": "setIdentifier",
+                    "source": [
+                        {
+                            "context": "src",
+                            "element": "SubmissionNo",
+                            "variable": "sNo"
+                        }
+                    ],
+                    "target": [
+                        {
+                            "context": "clm",
+                            "element": "identifier[0].value",
+                            "transform": "copy",
+                            "parameter": [
+                                {
+                                    "valueId": "sNo"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "setFacility",
+                    "source": [
+                        {
+                            "context": "src",
+                            "element": "FacilityCode",
+                            "variable": "fc"
+                        }
+                    ],
+                    "target": [
+                        {
+                            "context": "clm",
+                            "element": "facility.identifier.value",
+                            "transform": "copy",
+                            "parameter": [
+                                {
+                                    "valueId": "fc"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "setCreatedDate",
+                    "source": [
+                        {
+                            "context": "src",
+                            "element": "DateSubmitted",
+                            "variable": "ds"
+                        }
+                    ],
+                    "target": [
+                        {
+                            "context": "clm",
+                            "element": "created",
+                            "transform": "copy",
+                            "parameter": [
+                                {
+                                    "valueId": "ds"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "setAmount",
+                    "source": [
+                        {
+                            "context": "src",
+                            "element": "AmountClaimed",
+                            "variable": "amt"
+                        }
+                    ],
+                    "target": [
+                        {
+                            "context": "clm",
+                            "element": "total.value",
+                            "transform": "copy",
+                            "parameter": [
+                                {
+                                    "valueId": "amt"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "setRemarks",
+                    "source": [
+                        {
+                            "context": "src",
+                            "element": "Remarks",
+                            "variable": "rm"
+                        }
+                    ],
+                    "target": [
+                        {
+                            "context": "clm",
+                            "element": "supportingInfo[0].valueString",
+                            "transform": "copy",
+                            "parameter": [
+                                {
+                                    "valueId": "rm"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
