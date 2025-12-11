@@ -1,0 +1,61 @@
+{
+    "resourceType": "Parameters",
+    "id": "example-zhsf-authorization-parameters",
+    "parameter": [
+        {
+            "name": "source",
+            "resource": {
+                "resourceType": "Basic",
+                "id": "example-zhsf-authorization",
+                "meta": {
+                    "profile": [
+                        "http://moh.tz/fhir/StructureDefinition/zhsf-authorization-payload"
+                    ]
+                },
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://moh.tz/fhir/example-type",
+                            "code": "ZHSFAuthorizationPayload",
+                            "display": "Example ZHSF Authorization Logical Model"
+                        }
+                    ]
+                },
+                "extension": [
+                    {
+                        "url": "http://moh.tz/fhir/StructureDefinition/zhsf-authorization-payload#authorizationID",
+                        "valueString": "98bc2043-a955-429a-b1a8-4c1ed1ad4511"
+                    },
+                    {
+                        "url": "http://moh.tz/fhir/StructureDefinition/zhsf-authorization-payload#facilityCode",
+                        "valueString": "0000"
+                    },
+                    {
+                        "url": "http://moh.tz/fhir/StructureDefinition/zhsf-authorization-payload#cardNo",
+                        "valueString": "10200000000"
+                    },
+                    {
+                        "url": "http://moh.tz/fhir/StructureDefinition/zhsf-authorization-payload#authorizationStatus",
+                        "valueString": "ACCEPTED"
+                    },
+                    {
+                        "url": "http://moh.tz/fhir/StructureDefinition/zhsf-authorization-payload#authorizationNo",
+                        "valueString": "590524941515"
+                    },
+                    {
+                        "url": "http://moh.tz/fhir/StructureDefinition/zhsf-authorization-payload#authorizationDate",
+                        "valueDateTime": "2025-06-29T21:18:06.017Z"
+                    },
+                    {
+                        "url": "http://moh.tz/fhir/StructureDefinition/zhsf-authorization-payload#rejectionReasonID",
+                        "valueInteger": 0
+                    },
+                    {
+                        "url": "http://moh.tz/fhir/StructureDefinition/zhsf-authorization-payload#remarks",
+                        "valueString": "Verified OK"
+                    }
+                ]
+            }
+        }
+    ]
+}

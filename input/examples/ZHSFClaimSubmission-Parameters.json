@@ -1,0 +1,65 @@
+{
+    "resourceType": "Parameters",
+    "id": "example-zhsf-claimsubmission-parameters",
+    "parameter": [
+        {
+            "name": "source",
+            "resource": {
+                "resourceType": "Basic",
+                "id": "example-zhsf-claimsubmission",
+                "meta": {
+                    "profile": [
+                        "http://moh.tz/fhir/StructureDefinition/zhsf-claim-submission-payload"
+                    ]
+                },
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://moh.tz/fhir/example-type",
+                            "code": "ZHSFClaimSubmissionPayload",
+                            "display": "Example ZHSF Claim Submission Logical Model"
+                        }
+                    ]
+                },
+                "extension": [
+                    {
+                        "url": "http://moh.tz/fhir/StructureDefinition/zhsf-claim-submission-payload#SubmissionID",
+                        "valueString": "ba8f5352-55a9-4518-b804-4b84b3cf96f3"
+                    },
+                    {
+                        "url": "http://moh.tz/fhir/StructureDefinition/zhsf-claim-submission-payload#SubmissionNo",
+                        "valueString": "S900978360112"
+                    },
+                    {
+                        "url": "http://moh.tz/fhir/StructureDefinition/zhsf-claim-submission-payload#FacilityCode",
+                        "valueString": "06697"
+                    },
+                    {
+                        "url": "http://moh.tz/fhir/StructureDefinition/zhsf-claim-submission-payload#ClaimYear",
+                        "valueInteger": 2021
+                    },
+                    {
+                        "url": "http://moh.tz/fhir/StructureDefinition/zhsf-claim-submission-payload#ClaimMonth",
+                        "valueInteger": 10
+                    },
+                    {
+                        "url": "http://moh.tz/fhir/StructureDefinition/zhsf-claim-submission-payload#CardNo",
+                        "valueString": "10100000000"
+                    },
+                    {
+                        "url": "http://moh.tz/fhir/StructureDefinition/zhsf-claim-submission-payload#AuthorizationNo",
+                        "valueString": "951811257499"
+                    },
+                    {
+                        "url": "http://moh.tz/fhir/StructureDefinition/zhsf-claim-submission-payload#AmountClaimed",
+                        "valueString": "40000.00"
+                    },
+                    {
+                        "url": "http://moh.tz/fhir/StructureDefinition/zhsf-claim-submission-payload#Remarks",
+                        "valueString": "Claim Received Successfully"
+                    }
+                ]
+            }
+        }
+    ]
+}
