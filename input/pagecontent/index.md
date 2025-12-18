@@ -1,18 +1,12 @@
-# Tanzania National FHIR Implementation Guide
+# Tanzania FHIR Facade IG (R5)
 
-Welcome to the official FHIR R5 Implementation Guide for the **Tanzania Ministry of Health**.
+This Implementation Guide defines FHIR R5 artifacts for the NHIF ↔ ZHSF workflow:
+1) Member authorization at NHIF facilities  
+2) Beneficiary details retrieval  
+3) Service eligibility checks  
+4) Claim submission for reimbursement
 
-This IG provides:
-
-- Logical Models describing legacy data structures  
-- StructureMaps for transformations (Legacy → FHIR, FHIR → Legacy)  
-- ConceptMaps for terminology mapping  
-- National FHIR profiles  
-- Example resources for testing the Façade  
-
-This guide is used by the Tanzania FHIR Façade, Matchbox, and national integration services.
-
-## Contents
-
-- [Logical Models](logical-models.html)
-- [Mapping Guide](mapping-guide.html)
+The guide includes:
+- Profiles for Patient, Coverage, Claim, ClaimResponse, etc.
+- FHIR Operations ($authorize-member, $beneficiary-details, $service-eligibility, $submit-claim)
+- ExampleScenario documentation and executable examples
