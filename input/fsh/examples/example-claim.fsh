@@ -15,7 +15,8 @@ Usage: #example
 
 * insurance[0].sequence = 1
 * insurance[0].focal = true
-* insurance[0].coverage = Reference(Coverage/example)
+* insurance[0].coverage = Reference(example-coverage)
+* insurance[0].preAuthRef = "AUTH-123456"
 
 * item[0].sequence = 1
 * item[0].productOrService.text = "Outpatient consultation"
