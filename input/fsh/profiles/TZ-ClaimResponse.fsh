@@ -1,8 +1,18 @@
 Profile: TZClaimResponse
 Parent: ClaimResponse
 Id: tz-claimresponse
-Title: "TZ Claim Response"
+Title: "TZ NHIF–ZHSF Claim Response"
 
-* outcome 1..1
-* payment.amount 0..1
-* note 0..*
+* status 1..1
+* type 1..1
+* use 1..1
+* patient 1..1
+* created 1..1
+* insurer 1..1
+
+* item.reviewOutcome.decision 1..1
+* item.reviewOutcome.reason 0..1
+* item.reviewOutcome.preAuthPeriod.start 0..1
+* item.reviewOutcome.preAuthPeriod.end 0..1
+
+* processNote.text 0..*

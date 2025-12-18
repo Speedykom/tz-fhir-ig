@@ -1,18 +1,23 @@
-Instance: ex-claim-submission
+Instance: EX-Claim-Submission
 InstanceOf: TZClaim
-Title: "Claim Submission Example"
 Usage: #example
+
 * status = #active
-* type = http://terminology.hl7.org/CodeSystem/claim-type#institutional "Institutional"
+* type = #institutional
 * use = #claim
-* patient = Reference(ex-patient-zhsf-member)
-* provider = Reference(ex-org-nhif-facility-06697)
-* insurer = Reference(ex-org-zhsf)
-* insurance[0].coverage = Reference(ex-coverage-zhsf-product)
-* priority = http://terminology.hl7.org/CodeSystem/processpriority#normal "Normal"
-* total.value = 40000.00
-* total.currency = #TZS
+* created = "2025-06-02"
+
+* patient = Reference(Patient/example-patient)
+* provider = Reference(Organization/example-nhif-facility)
+
+* insurance[0].sequence = 1
+* insurance[0].focal = true
+* insurance[0].coverage = Reference(Coverage/example-zhsf-coverage)
+* insurance[0].preAuthRef = "650529986013"
+
+* diagnosis[0].sequence = 1
+* diagnosis[0].diagnosisCodeableConcept = $icd10#A15 "Tuberculosis"
+
 * item[0].sequence = 1
-* item[0].productOrService = http://snomed.info/sct#271649006 "Hospital admission"
-* item[0].net.value = 40000.00
-* item[0].net.currency = #TZS
+* item[0].quantity.value = 1
+* item[0].unitPrice.value = 30000
