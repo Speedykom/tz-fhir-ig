@@ -11,3 +11,6 @@ Usage: #example
 * created = "2025-06-02"
 * insurer = Reference(example-organization)
 * patient = Reference(example-patient)
+
+* item[0].sequence = 1
+* item[0].reviewOutcome.decision = #approved
