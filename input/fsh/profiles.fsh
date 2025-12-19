@@ -53,14 +53,14 @@ Description: "Insurance coverage provided by NHIF or administered by ZHSF."
 
 // ------------------------------------------------------------
 
-Profile: TZEncounter
-Parent: Encounter
-Id: tz-encounter
-Title: "TZ Encounter (Claim Context)"
-Description: "Encounter providing the clinical context for a claim."
-* subject 1..1
-* subject only Reference(TZPatient)
-* actualPeriod 1..1
+// Profile: TZEncounter
+// Parent: Encounter
+// Id: tz-encounter
+// Title: "TZ Encounter (Claim Context)"
+// Description: "Encounter providing the clinical context for a claim."
+// * subject 1..1
+// * subject only Reference(TZPatient)
+// * actualPeriod 1..1
 
 // ------------------------------------------------------------
 
