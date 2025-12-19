@@ -10,10 +10,10 @@ Usage: #example
 * patient = Reference(Patient/example)
 * provider = Reference(Organization/example)
 
-* diagnosis[0].sequence = 1
+* diagnosis[0].itemSequence = 1
 * diagnosis[0].diagnosisCodeableConcept.text = "General consultation"
 
-* insurance[0].sequence = 1
+* insurance[0].itemSequence = 1
 * insurance[0].focal = true
 * insurance[0].coverage = Reference(example-coverage)
 * insurance[0].preAuthRef = "AUTH-123456"
