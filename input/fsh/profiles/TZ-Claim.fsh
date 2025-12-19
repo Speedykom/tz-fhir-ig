@@ -12,16 +12,13 @@ Description: "Claim resource for NHIF to ZHSF reimbursement workflow."
 * provider 1..1
 
 * insurance 1..*
-* insurance.sequence 1..1
 * insurance.focal 1..1
 * insurance.coverage 1..1
 * insurance.preAuthRef 1..1
 
 * diagnosis 1..*
-* diagnosis.sequence 1..1
 * diagnosis.diagnosis[x] 1..1
 
 * item 1..*
-* item.sequence 1..1
 * item.quantity 1..1
 * item.unitPrice 1..1

@@ -12,5 +12,4 @@ Usage: #example
 * insurer = Reference(example-organization)
 * patient = Reference(example-patient)
 
-* item[0].sequence = 1
 * item[0].reviewOutcome.decision = #approved

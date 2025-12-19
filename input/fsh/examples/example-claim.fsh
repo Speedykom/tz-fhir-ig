@@ -18,7 +18,6 @@ Usage: #example
 * insurance[0].coverage = Reference(example-coverage)
 * insurance[0].preAuthRef = "AUTH-123456"
 
-* item[0].sequence = 1
 * item[0].productOrService.text = "Outpatient consultation"
 * item[0].quantity.value = 1
 * item[0].unitPrice.value = 40000
