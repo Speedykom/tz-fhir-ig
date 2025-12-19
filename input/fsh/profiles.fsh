@@ -58,13 +58,9 @@ Parent: Encounter
 Id: tz-encounter
 Title: "TZ Encounter (Claim Context)"
 Description: "Encounter providing the clinical context for a claim."
-
-* actualPeriod 1..1
-* actualPeriod.start 1..1
-
 * subject 1..1
 * subject only Reference(TZPatient)
-
+* actualPeriod 1..1
 
 // ------------------------------------------------------------
 
